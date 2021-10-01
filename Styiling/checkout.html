@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      #checkout {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        margin: auto;
+      }
+      #frst {
+        width: 55%;
+        padding: 50px;
+        border-right: 1px solid rgb(184, 181, 181);
+        border-top: 1px solid rgb(184, 181, 181);
+        height: max-content;
+      }
+      #scnd {
+        padding: 50px;
+        background-color: rgb(250, 250, 250);
+      }
+      #frst > p {
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+      }
+      #frst > img {
+        width: 96px;
+        height: 60px;
+        margin-left: 260px;
+      }
+      #frst > h5 {
+        text-align: center;
+        margin: 25px 0 0 0;
+      }
+      #scnd {
+        width: 45%;
+        border-top: 1px solid rgb(184, 181, 181);
+        height: 100vh;
+      }
+      .logos {
+        width: 530px;
+        height: 50px;
+        border: 1px solid rgb(184, 181, 181);
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .logos > img {
+        width: 24%;
+        height: 45px;
+        gap: 10px;
+        object-fit: cover;
+      }
+      hr {
+        color: rgb(226, 225, 225);
+      }
+      .middle > div:nth-child(1) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .middle > input {
+        width: 100%;
+        margin: 5px auto;
+        height: 46.5px;
+        line-height: 18.2px;
+        border-radius: 5px;
+        border: 1px solid rgb(204, 203, 203);
+      }
+      .middle > input::placeholder {
+        padding-left: 10px;
+      }
+      .middle > input:nth-child(5),
+      .middle > input:nth-child(6) {
+        width: 48.5%;
+      }
+      .middle > input:nth-child(11),
+      .middle > input:nth-child(12),
+      .middle > input:nth-child(13) {
+        width: 31.8%;
+      }
+      .middle > button {
+        height: 60px;
+        width: 183px;
+        background-color: #454545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      .tnc {
+        font-size: 10px;
+      }
+      .qty {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .qty > img {
+        width: 90px;
+        height: 110px;
+        border: 1px solid black;
+      }
+      .discount,
+      .total,
+      .subtotal {
+        width: 110%;
+        margin-left: 20px;
+      }
+      .discount > input {
+        width: 319px;
+        height: 45px;
+        border: 1px solid #d5d5d5;
+        border-radius: 5px;
+        margin: auto;
+      }
+      .discount > button {
+        height: 47px;
+        width: 115px;
+        color: white;
+        background-color: gray;
+        border-radius: 5px;
+        margin-left: 20px;
+      }
+      .discount {
+        box-sizing: border-box;
+        padding: 30px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="checkout">
+      <div id="frst">
+        <img
+          alt="Shop Miss A"
+          src="//cdn.shopify.com/s/files/1/0882/6874/files/Miss_A_NEW_Thicker_Gray2.png?18627"
+        />
+        <p>
+          Cart > &nbsp;&nbsp;&nbsp;&nbsp;<span
+            >Information >&nbsp;&nbsp;&nbsp;&nbsp;</span
+          ><span>Shipping >&nbsp;&nbsp;&nbsp;&nbsp;</span
+          ><span>Payment >&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </p>
+        <h5>Express checkout</h5>
+        <div class="logos">
+          <img src="./amazon pay.png" />
+          <img src="./gpay.png" />
+          <img src="./paypal.png" />
+          <img src="./shopPay.png" />
+        </div>
+        <br />
+        <hr />
+        <h5>OR</h5>
+        <div class="middle">
+          <div>
+            <h4>Contact information</h4>
+            <p>Already have an account?Log in</p>
+          </div>
+          <input type="text" placeholder="Email" />
+          <p>
+            <input type="checkbox" name="" id="" /> Keep me up to date on news
+            and offers
+          </p>
+          <h4>Shipping address</h4>
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="Last name" />
+
+          <input type="text" placeholder="Company" />
+
+          <input type="text" placeholder="Address" />
+
+          <input type="text" placeholder="Apartment, suite etc. (optional)" />
+
+          <input type="text" placeholder="City" />
+          <input type="text" placeholder="Country" />
+          <input type="text" placeholder="State" />
+          <input type="text" placeholder="Pin" />
+          <input type="text" placeholder="Phone" />
+          <p>
+            <input type="checkbox" name="" id="" /> Send me special offers
+            through text*
+          </p>
+          <p class="tnc">
+            *I agree to receive recurring automated marketing text messages
+            (e.g. cart reminders) at the phone number provided. Consent is not a
+            condition to purchase. Msg & data rates may apply. Msg frequency
+            varies. Reply HELP for help and STOP to cancel. View our Terms of
+            Service and Privacy Policy
+          </p>
+          <button onclick="finish()">Submit order</button>
+        </div>
+      </div>
+      <div id="scnd">
+        <div class="qty">
+          <div>
+            <img src="" alt="sample" />
+          </div>
+          <div>
+            <h3>title</h3>
+          </div>
+          <div>
+            <p>Price</p>
+          </div>
+        </div>
+        <hr />
+        <div class="discount">
+          <input type="text" placeholder="Gift card or coupon" /><button>
+            Apply
+          </button>
+        </div>
+        <hr />
+        <div class="subtotal">
+          <p>Subtotal <span></span></p>
+          <p>Shipping <span></span></p>
+        </div>
+        <hr />
+        <div class="total"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./scripts/checkout.js"></script>
+<script>
+  function finish() {
+    window.location.href = "./Successfull.html";
+  }
+</script>

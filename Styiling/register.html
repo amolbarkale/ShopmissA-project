@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      /* navbar */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .top {
+        width: 100%;
+        height: 40px;
+        background-color: rgb(251, 238, 221);
+        justify-content: center;
+        position: fixed;
+      }
+      .top > p {
+        color: black;
+        text-align: center;
+        align-items: center;
+        margin: 0 0;
+        font-weight: 700;
+        font-size: 10px;
+        font-family: "Karla", sans-serif;
+        line-height: 16.5px;
+        padding-top: 8px;
+      }
+      .nav {
+        background-color: black;
+        height: 87px;
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 15px 50px;
+        position: fixed;
+        top: 0px;
+        margin-top: 40px;
+      }
+      .headers {
+        margin-top: 16px;
+        padding-left: 25px;
+        width: 75%;
+      }
+      header > p {
+        text-align: start;
+        margin-left: 20px;
+      }
+      .headers > li {
+        font-weight: 700;
+        font-size: 13px;
+        font-family: "Karla", sans-serif;
+        line-height: 21.5px;
+        vertical-align: middle;
+        display: inline;
+        padding: 2px 10px;
+      }
+      .icons {
+        width: 18%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 15px;
+        margin-left: 150px;
+      }
+      .nav > div > svg {
+        width: 20px;
+        height: 20px;
+      }
+      select {
+        background-color: black;
+        color: white;
+        font-size: 14px;
+        font-family: "Karla", sans-serif;
+        margin-bottom: 20px;
+      }
+      /* navbar */
+      /* Register div */
+      #login {
+        width: 400px;
+        height: 304px;
+        left: 38%;
+        top: 33%;
+        position: absolute;
+      }
+      #login > p {
+        font-size: 22px;
+        text-align: center;
+        font-weight: 700;
+        font-family: "Karla", sans-serif;
+        color: #121212;
+        line-height: 36px;
+      }
+      #login > p:nth-child(2) {
+        color: #414141;
+        font-size: 13px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: 0.9px;
+      }
+      #login > input {
+        color: #414141;
+        border: 1px solid #e3e3e3;
+        height: 41.2px;
+        width: 90%;
+        box-sizing: content-box !important;
+        margin: 8px 14px 8px 14px;
+      }
+      #login > input::placeholder {
+        padding-left: 10px;
+      }
+      #login > button {
+        width: 92%;
+        height: 40px;
+        background-color: #414141;
+        color: white;
+        border: none;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-left: 15px;
+        margin-top: 5px;
+        font-weight: 700;
+      }
+      /* Register div */
+      /* sidebar */
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .sidebar {
+        position: fixed;
+        right: -400px;
+        width: 400px;
+        height: 100%;
+        background-color: white;
+        color: black !important;
+        transition: all 0.5s ease;
+        border: 1px solid black;
+        margin-top: -16px;
+      }
+      #check:checked ~ .sidebar {
+        right: 0;
+      }
+      .sidebar header {
+        font-size: 22px;
+        color: black;
+        line-height: 70px;
+        text-align: center;
+        user-select: none;
+      }
+      #check {
+        display: none;
+      }
+
+      label .cart {
+        transition: all 0.5s;
+      }
+      #cancel {
+        position: absolute;
+        color: black;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      #cancel {
+        z-index: 1111;
+        left: 350px;
+        top: 17px;
+        font-size: 30px;
+        color: gray;
+        padding: 4px 9px;
+        transition: all 0.5s ease;
+      }
+
+      #check:checked ~ .cart {
+        left: 250px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #check:checked ~ #cancel {
+        left: 195px;
+        display: block;
+      }
+
+      #itm {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 228px;
+      }
+      .photo {
+        width: 35%;
+        border: 1px solid black;
+        height: 168px;
+        margin-top: 30px;
+      }
+      .details {
+        width: 65%;
+        border: 1px solid black;
+        height: 168px;
+        margin-top: 30px;
+      }
+      #itm + button {
+        width: 92%;
+        height: 40px;
+        background-color: #414141;
+        color: white;
+        border: none;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-left: 15px;
+        margin-top: 5px;
+        font-weight: 700;
+      }
+      label {
+        margin-top: -21px;
+      }
+      .fa-bars {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top"><p>Affordable is Beautiful - Yes, it's only $1!</p></div>
+    <div class="nav">
+      <div>
+        <img
+          src="//cdn.shopify.com/s/files/1/0882/6874/files/Miss-A-Logo_beda907e-dae8-4655-a8c8-a670f8391f25_90x.png?v=1589222508"
+          width="90"
+          alt="Shop Miss A"
+        />
+      </div>
+
+      <ul class="headers">
+        <li>NEW ARRIVALS</li>
+        <li>BEST SELLERS</li>
+        <li>SKIN CARES</li>
+        <li>MAKEUP</li>
+        <li>ACCESSORIES</li>
+        <li>LIFE + HOME</li>
+        <li>SPA + BODY</li>
+      </ul>
+      <div class="icons">
+        <select name="">
+          <option value="USD">USD</option>
+          <option value="CAD">CAD</option>
+          <option value="BRL">BRL</option>
+          <option value="EUP">EUP</option>
+          <option value="GBP">GBP</option>
+          <option value="AUD">AUD</option>
+        </select>
+        <svg class="account" role="presentation" viewBox="0 0 20 20">
+          <g
+            transform="translate(1 1)"
+            stroke="white"
+            stroke-width="2"
+            fill="none"
+            fill-rule="evenodd"
+            stroke-linecap="square"
+          >
+            <path
+              d="M0 18c0-4.5188182 3.663-8.18181818 8.18181818-8.18181818h1.63636364C14.337 9.81818182 18 13.4811818 18 18"
+            ></path>
+            <circle cx="9" cy="4.90909091" r="4.90909091"></circle>
+          </g>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-heart"
+        >
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+          />
+        </svg>
+        <svg class="search" role="presentation" viewBox="0 0 21 21">
+          <g
+            transform="translate(1 1)"
+            stroke="white"
+            stroke-width="2"
+            fill="none"
+            fill-rule="evenodd"
+            stroke-linecap="square"
+          >
+            <path d="M18 18l-5.7096-5.7096"></path>
+            <circle cx="7.2" cy="7.2" r="7.2"></circle>
+          </g>
+        </svg>
+        <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+
+          <svg
+            class="cart"
+            stroke="white"
+            role="presentation"
+            viewBox="0 0 19 23"
+          >
+            <path
+              d="M0 22.985V5.995L2 6v.03l17-.014v16.968H0zm17-15H2v13h15v-13zm-5-2.882c0-2.04-.493-3.203-2.5-3.203-2 0-2.5 1.164-2.5 3.203v.912H5V4.647C5 1.19 7.274 0 9.5 0 11.517 0 14 1.354 14 4.647v1.368h-2v-.912z"
+              fill="currentColor"
+              stroke="white"
+              stroke-width="1.2"
+            ></path>
+          </svg>
+        </label>
+      </div>
+      <div id="sidese">
+        <input type="checkbox" id="check" />
+
+        <div class="sidebar">
+          <header>
+            <p>Cart</p>
+            <label for="check"> <i class="fas fa-times" id="cancel"></i></label>
+          </header>
+          <br />
+          <hr />
+          <ul>
+            <li>
+              <div id="itm">
+                <div class="photo"><img src="" alt="img" /></div>
+                <div class="details">
+                  <h5>Title</h5>
+                  <button>Remove</button>
+                </div>
+              </div>
+              <button>CHECKOUT</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div id="login">
+      <p>Register</p>
+      <p>Please fill in the information below::</p>
+      <input id="fName" type="text" placeholder="First Name" /><br />
+      <input id="lName" type="text" placeholder="Last name" /><br />
+      <input id="mail" type="text" placeholder="Email" /><br />
+      <input id="password" type="text" placeholder="password" />
+      <button id="regi">CREATE MY ACCOUNT</button>
+    </div>
+  </body>
+</html>
+<script src="./scripts/register.js"></script>

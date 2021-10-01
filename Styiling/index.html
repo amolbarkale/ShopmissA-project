@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <title>IndexPage</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .top {
+        width: 100%;
+        height: 40px;
+        background-color: rgb(251, 238, 221);
+        justify-content: center;
+        position: fixed;
+      }
+      .top > p {
+        color: black;
+        text-align: center;
+        align-items: center;
+        margin: 0 0;
+        font-weight: 700;
+        font-size: 10px;
+        font-family: "Karla", sans-serif;
+        line-height: 16.5px;
+        padding-top: 8px;
+      }
+      .nav {
+        background-color: black;
+        height: 87px;
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 15px 50px;
+        position: fixed;
+        top: 0px;
+        margin-top: 40px;
+      }
+      .title {
+        height: 79px;
+        color: black;
+        background-color: rgb(222, 175, 172);
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        margin: auto;
+        box-sizing: border-box;
+        padding-top: 20px;
+        letter-spacing: 0.15rem;
+        margin-top: 108px;
+      }
+      .nav > div > svg {
+        width: 20px;
+        height: 20px;
+      }
+      .fa-heart {
+        width: 500px;
+        height: 500px;
+        color: green;
+      }
+      .headers {
+        margin-top: 16px;
+        padding-left: 25px;
+        width: 75%;
+      }
+      header > p {
+        text-align: start;
+        margin-left: 20px;
+      }
+      .headers > li {
+        font-weight: 700;
+        font-size: 13px;
+        font-family: "Karla", sans-serif;
+        line-height: 21.5px;
+        vertical-align: middle;
+        display: inline;
+        padding: 2px 10px;
+      }
+      .icons {
+        width: 18%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 15px;
+        margin-left: 150px;
+      }
+      select {
+        background-color: black;
+        color: white;
+        font-size: 14px;
+        font-family: "Karla", sans-serif;
+        margin-bottom: 20px;
+      }
+      .Slideshow {
+        cursor: pointer;
+        background-color: rgb(239, 225, 225);
+      }
+      .Slideshow > div:nth-child(1) > img {
+        height: 609px;
+      }
+      .Slideshow > div:nth-child(2) > img {
+        height: 476px;
+      }
+      .still > img {
+        height: 474px;
+      }
+      .slider {
+        width: 100%;
+        height: 476px;
+        background-image: url("//cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT_23_3_6fc11b02-417c-42f3-ac21-0f92643aede6_1800x.jpg?v=1632419829 1800w");
+        animation: slider 5s infinite linear;
+      }
+      @keyframes slider {
+        0% {
+          background-image: url("//cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT_23_2_2000x.jpg?v=1632417462 1800w");
+        }
+        50% {
+          background-image: url("//cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT_23_3_6fc11b02-417c-42f3-ac21-0f92643aede6_1800x.jpg?v=1632419829 1800w");
+        }
+      }
+      .text {
+        font-size: 22px;
+        font-weight: 700;
+        font-family: "Karla", sans-serif;
+        line-height: 36px;
+        text-align: center;
+        margin: 50px 0;
+      }
+      .slider1flex > img {
+        height: 606px;
+      }
+      /* carousal */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      .carousel-cell {
+        width: 20%;
+        height: 570px;
+        margin-right: 60px;
+        border-radius: 5px;
+        counter-increment: carousel-cell;
+        object-fit: cover;
+      }
+
+      .carousel-cell > img,
+      #charity {
+        width: 100%;
+      }
+
+      .motion {
+        margin-top: 50px;
+      }
+      .motion > img {
+        height: 509px;
+      }
+      #hording {
+        height: 406px;
+        object-fit: cover;
+        width: 100%;
+      }
+      .carousel1 {
+        margin-top: 50px;
+      }
+      .kids {
+        height: 607px;
+        margin-top: 30px;
+      }
+      /*minimalist */
+      .slider1 {
+        height: 50px;
+        padding-left: 15px;
+        overflow: hidden;
+      }
+      .slider1 div {
+        color: white;
+        height: 50px;
+        margin-bottom: 50px;
+        padding: 2px 15px;
+        text-align: center;
+        box-sizing: border-box;
+        font-family: "Karla", sans-serif;
+      }
+      .slider-text11 {
+        animation: slide 5s linear infinite;
+      }
+
+      @keyframes slide {
+        0% {
+          margin-top: -300px;
+        }
+        5% {
+          margin-top: -200px;
+        }
+        33% {
+          margin-top: -200px;
+        }
+        38% {
+          margin-top: -100px;
+        }
+        66% {
+          margin-top: -100px;
+        }
+        71% {
+          margin-top: 0px;
+        }
+        100% {
+          margin-top: 0px;
+        }
+      }
+      /*minimalist */
+      .cols {
+        font-family: "Karla", sans-serif;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        color: white;
+        background-color: rgb(46, 46, 46);
+      }
+      #footer {
+        background-color: rgb(46, 46, 46);
+        padding: 20px;
+      }
+      #icons > svg {
+        margin: 40px 20px 20px 0px;
+      }
+      /* sidebar */
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .sidebar {
+        position: fixed;
+        right: -400px;
+        width: 400px;
+        height: 100%;
+        background-color: white;
+        color: black !important;
+        transition: all 0.5s ease;
+        border: 1px solid black;
+        margin-top: -16px;
+      }
+      #check:checked ~ .sidebar {
+        right: 0;
+      }
+      .sidebar header {
+        font-size: 22px;
+        color: black;
+        line-height: 70px;
+        text-align: center;
+        user-select: none;
+      }
+      #check {
+        display: none;
+      }
+
+      label .cart {
+        transition: all 0.5s;
+      }
+      #cancel {
+        position: absolute;
+        color: black;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      #cancel {
+        z-index: 1111;
+        left: 350px;
+        top: 17px;
+        font-size: 30px;
+        color: gray;
+        padding: 4px 9px;
+        transition: all 0.5s ease;
+      }
+
+      #check:checked ~ .cart {
+        left: 250px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #check:checked ~ #cancel {
+        left: 195px;
+        display: block;
+      }
+
+      #itm {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 228px;
+      }
+      .photo {
+        width: 35%;
+        border: 1px solid black;
+        height: 168px;
+        margin-top: 30px;
+      }
+      .details {
+        width: 65%;
+        border: 1px solid black;
+        height: 168px;
+        margin-top: 30px;
+      }
+      label {
+        margin-top: -21px;
+      }
+      .fa-bars {
+        color: black;
+      }
+
+      /* https://www.cs.usfca.edu/~galles/visualization/Algorithms.html */
+      /* https://visualgo.net/en */
+    </style>
+  </head>
+  <body>
+    <div class="top"><p>Affordable is Beautiful - Yes, it's only $1!</p></div>
+    <div class="nav">
+      <div>
+        <img
+          src="//cdn.shopify.com/s/files/1/0882/6874/files/Miss-A-Logo_beda907e-dae8-4655-a8c8-a670f8391f25_90x.png?v=1589222508"
+          width="90"
+          alt="Shop Miss A"
+        />
+      </div>
+
+      <ul class="headers">
+        <li>NEW ARRIVALS</li>
+        <li>BEST SELLERS</li>
+        <li>SKIN CARES</li>
+        <li>MAKEUP</li>
+        <li>ACCESSORIES</li>
+        <li>LIFE + HOME</li>
+        <li>SPA + BODY</li>
+      </ul>
+      <div class="icons">
+        <select name="">
+          <option value="USD">USD</option>
+          <option value="CAD">CAD</option>
+          <option value="BRL">BRL</option>
+          <option value="EUP">EUP</option>
+          <option value="GBP">GBP</option>
+          <option value="AUD">AUD</option>
+        </select>
+        <svg class="account" role="presentation" viewBox="0 0 20 20">
+          <g
+            transform="translate(1 1)"
+            stroke="white"
+            stroke-width="2"
+            fill="none"
+            fill-rule="evenodd"
+            stroke-linecap="square"
+          >
+            <path
+              d="M0 18c0-4.5188182 3.663-8.18181818 8.18181818-8.18181818h1.63636364C14.337 9.81818182 18 13.4811818 18 18"
+            ></path>
+            <circle cx="9" cy="4.90909091" r="4.90909091"></circle>
+          </g>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-heart"
+        >
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+          />
+        </svg>
+        <svg class="search" role="presentation" viewBox="0 0 21 21">
+          <g
+            transform="translate(1 1)"
+            stroke="white"
+            stroke-width="2"
+            fill="none"
+            fill-rule="evenodd"
+            stroke-linecap="square"
+          >
+            <path d="M18 18l-5.7096-5.7096"></path>
+            <circle cx="7.2" cy="7.2" r="7.2"></circle>
+          </g>
+        </svg>
+        <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+
+          <svg
+            class="cart"
+            stroke="white"
+            role="presentation"
+            viewBox="0 0 19 23"
+          >
+            <path
+              d="M0 22.985V5.995L2 6v.03l17-.014v16.968H0zm17-15H2v13h15v-13zm-5-2.882c0-2.04-.493-3.203-2.5-3.203-2 0-2.5 1.164-2.5 3.203v.912H5V4.647C5 1.19 7.274 0 9.5 0 11.517 0 14 1.354 14 4.647v1.368h-2v-.912z"
+              fill="currentColor"
+              stroke="white"
+              stroke-width="1.2"
+            ></path>
+          </svg>
+        </label>
+      </div>
+      <div id="sidese">
+        <input type="checkbox" id="check" />
+
+        <div class="sidebar">
+          <header>
+            <p>Cart</p>
+            <label for="check"> <i class="fas fa-times" id="cancel"></i></label>
+          </header>
+          <br />
+          <hr />
+          <ul>
+            <li>
+              <div id="itm">
+                <div class="photo"><img src="" alt="img" /></div>
+                <div class="details">
+                  <h5>Title</h5>
+                  <button>Remove</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="title">
+      ALL ORDERS SHIPOUT IN 48 HOURS(EXLCUDING WEEKENDS) FROM DALLAS, TX
+    </div>
+    <div class="Slideshow" onclick="redirect()">
+      <img
+        srcset="
+          //cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT_23_2000x.jpg?v=1632417354 2000w
+        "
+      />
+    </div>
+    <div class="slider"></div>
+    <div class="still">
+      <img
+        srcset="
+          https://cdn.shopify.com/s/files/1/0882/6874/files/How_We_Sell_for_1_086708fe-55b0-4ed4-a0d0-499a71d90bdb_1800x.jpg?v=1632419124%201800w
+        "
+      />
+    </div>
+    <div class="slider1flex">
+      <img
+        srcset="
+          https://cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT-21_3_81c979db-7484-4696-9583-e006732ca70b_1800x.gif?v=1632418158%201800w
+        "
+      />
+    </div>
+    <div class="text">NEW AOA AND OKI LAUNCHES</div>
+    <div class="carousel" data-flickity='{ "groupCells": true }'>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/AOA-PawPaw-StampEyeliner_400x.jpg?v=1631629333"
+          alt=""
+        />
+        <p>Paw Paw Beauty Face Stamp and Eyeliner</p>
+        <p>From 1.55$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/OKI-MultisurfaceCleaningTablets_400x.jpg?v=1630604435"
+          alt=""
+        />
+        <p>Official Key items Multi Use Soap Tablet-Lemon</p>
+        <p>From 1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/AOA-LoosePigment_400x.jpg?v=1628779924"
+          alt=""
+        />
+        <p>AOA Loose Pigment Powders- Fantacy Tones</p>
+        <p>1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/banner_c345db3b-0177-4a7a-8a98-d11aeb227094_400x.jpg?v=1612571139"
+          alt=""
+        />
+        <p>AOA Microfibre Washclothes Towel</p>
+        <p>From 1$</p>
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/OKI-MotionSticknessPatches_400x.jpg?v=1628174845"
+          alt=""
+        />
+        <p>Motion Stickness Patchs</p>
+        <p>From 1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/OKI-BagClips_b37c8009-013a-4a4c-9a35-ae5689beaf4d_400x.jpg?v=1631034652"
+          alt=""
+        />
+        <p>Official Key Items Air Tight Bags Clips Set</p>
+        <p>1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/AOA-Hold-My-Brow-Clear-Brow-Soap_400x.jpg?v=1626113315"
+          alt=""
+        />
+        <p>AOA Hold My Brow Soap</p>
+        <p>1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/PawPaw-DogBagDispenser_400x.jpg?v=1627394554"
+          alt=""
+        />
+        <p>Paw Paw Poop Bag dispencers + Bags</p>
+        <p>1.55$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <br />
+    <div class="motion">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT-21_6_6e3a73ef-1d29-400d-adc9-731ec425db86_2000x.gif?v=1632237814"
+        alt=""
+      />
+    </div>
+    <div class="text">Treat-Yourself-Tools</div>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0882/6874/files/Charity_5e8e6102-780b-438d-b1be-27f9a6feefa1_1800x.jpg?v=1632419230"
+      alt=""
+      id="charity"
+    />
+
+    <img
+      id="hording"
+      src="https://cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT_21_b_1800x.jpg?v=1632235084"
+      alt=""
+    />
+
+    <br />
+    <div class="carousel1" data-flickity='{ "groupCells": true }'>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/LIGHT_400x.jpg?v=1582039606"
+          alt=""
+        />
+        <p>Paw Paw Beauty Face Stamp and Eyeliner</p>
+        <p>From 1.55$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/MEDIUM_400x.jpg?v=1582039642"
+          alt=""
+        />
+        <p>Official Key items Multi Use Soap Tablet-Lemon</p>
+        <p>From 1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/DARK_400x.jpg?v=1582039670"
+          alt=""
+        />
+        <p>AOA Loose Pigment Powders- Fantacy Tones</p>
+        <p>1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/3_400x_16d03181-cf68-43e9-b996-0d3196a0a5b9_400x.jpg?v=1611336560"
+          alt=""
+        />
+        <p>AOA Microfibre Washclothes Towel</p>
+        <p>From 1$</p>
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/Prowear-Medium-Main_400x.jpg?v=1585838923"
+          alt=""
+        />
+        <p>Motion Stickness Patchs</p>
+        <p>From 1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/1_f6da420f-7f3b-4bc8-96ea-496113580160_400x.jpg?v=1583162631"
+          alt=""
+        />
+        <p>Official Key Items Air Tight Bags Clips Set</p>
+        <p>1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/Prowear-Light-Main_400x.jpg?v=1585860554"
+          alt=""
+        />
+        <p>AOA Hold My Brow Soap</p>
+        <p>1$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="carousel-cell">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0882/6874/products/Prowear-Dark-Main3_400x.jpg?v=1585838943"
+          alt=""
+        />
+        <p>Paw Paw Poop Bag dispencers + Bags</p>
+        <p>1.55$</p>
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-heart"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <br />
+    <img
+      class="kids"
+      src="https://cdn.shopify.com/s/files/1/0882/6874/files/Homepage_SEPT_21_b_3_1800x.jpg?v=1632235054"
+      alt=""
+    />
+    <div id="footer">
+      <div class="slider1">
+        <div class="slider-text11">
+          "My top pick for the best beauty sponge"
+        </div>
+        <div class="slider-text22">
+          "Miss A is the supper affordable beauty dealer you need to know
+          about."
+        </div>
+        <div class="slider-text33">"no wonder TikTokers are obessed!"</div>
+      </div>
+      <div class="cols">
+        <div class="c1">
+          <h4>Help</h4>
+          <p>Help Center</p>
+          <p>Shipping</p>
+          <p>Returns + Exchanges</p>
+          <p>Terms of services</p>
+          <p>Privacy policy</p>
+        </div>
+        <div class="c2">
+          <h4>Missies</h4>
+          <p>My Account</p>
+          <p>Store Locator</p>
+          <p>#Secret-Sale Promotion</p>
+          <p>Gift Cards</p>
+          <p>Skincare Quiz</p>
+        </div>
+        <div class="c3">
+          <h4>About</h4>
+          <p>Our Story</p>
+          <p>Feel Good Charity</p>
+          <p>Press</p>
+          <p>Contact US</p>
+          <p>Career Opportunities</p>
+        </div>
+        <div class="c4">
+          <h4>hey, let's keep in touch!</h4>
+          <p>
+            Subscribe to our newsletter and don't miss out <br />
+            on our weekly #SecretSale!<br />
+            <input type="mail" placeholder="Enter your email address" />
+            <button>SUBSCRIBE</button>
+          </p>
+        </div>
+      </div>
+      <div id="icons">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-facebook"
+        >
+          <path
+            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-instagram"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-youtube"
+        >
+          <path
+            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+          />
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-twitter"
+        >
+          <path
+            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+          />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src=></script>
+<script>
+ function redirect() {
+   window.location.href = "./product.html"
+ }
+</script>
