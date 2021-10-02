@@ -21,7 +21,7 @@ function submitIt() {
         console.log("response:", res);
         if (res.ok === true) {
           alert("succed");
-          window.location.href = "./index.html"
+         window.location.href = "./index.html"
         }
        
       })

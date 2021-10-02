@@ -1,6 +1,3 @@
-  // import axios from "axios";
-
-
 
 async function getAPI() {
     let data = await fetch("http://localhost:5000/api/products");
@@ -12,8 +9,9 @@ async function getAPI() {
   res.forEach(({ title, img, price}) => {
 
     let div = document.createElement("div");
-    div.addEventListener("click", function ( ) {
-      addIt(title, img,price)
+    div.addEventListener("click", function () {
+      postIt( title, price, img)
+      //addIt(title, img,price)
     })
     
         let imge = document.createElement("img");
@@ -103,69 +101,76 @@ async function getAPI() {
         pric.innerHTML = `$ ${price}`;
         div.append(imge,h5, pric,);
     display1.appendChild(div);
-
     })
-
 }
 getAPI();
-function addIt(title, img, price) {
-   setItm(title, img, price);
-    totalcost(price);
+
+async function postIt(title, price, img) {
+  let dataa = {
+    title,
+    price,
+    img,
+  }
+  dataa = JSON.stringify(dataa)
+
+  let data = fetch("http://localhost:5000/api/carts", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json"
+    },body: dataa,
+  })
+    .then(response => response.json())
+    .then((json) => {
+      displayIt(),
+      console.log("JSON:", json)
+    })
 }
 
 
-function setItm(title, img, price) {
-  
-  let arr = [title, img, price];
 
-
-  let items = JSON.parse(localStorage.getItem("productsInCart"));
-  if (items == null) {
-    items = [];
-  }
-
-  items.push(arr);
-  localStorage.setItem("productsInCart", JSON.stringify(items));
-}
-
-function totalcost(price) {
-  let cartCost = localStorage.getItem("totalCost");
-
-  if (cartCost != null) {
-    cartCost = parseInt(cartCost);
-    localStorage.setItem("totalCost", JSON.stringify(cartCost + price))
-  }
-  else {
-    localStorage.setItem("totalCost",price)
-  }
-}
-
-function displayIt() {
-
-  let cartitm = localStorage.getItem("productsInCart");
-  cartitm = JSON.parse(cartitm);
+async function displayIt() {
+  let totals = document.getElementById("totals");
+  let data = await fetch("http://localhost:5000/api/carts");
+  let res = await data.json();
+ 
   let prodcont = document.querySelector(".window");
-  let cartCost = localStorage.getItem("totalCost");
 
-  if (cartitm && prodcont) {
-    prodcont.innerHTML = "";
-    cartitm.map((item) => {
-
-      prodcont.innerHTML += `<li> <div id="itm">
-                <div class="photo"><img id="pics" src="${item[1]}" alt="img" /></div>
+   if (res && prodcont) {
+     prodcont.innerHTML = "";
+     let total = 0;
+     res.map((item) => {
+       let bill = (total += item.price).toFixed(2);
+       localStorage.setItem("bill", bill)
+       totals.innerHTML = `<p>Cart Total :${bill}</p>`;
+       prodcont.innerHTML += `<li> <div id="itm">
+                <div class="photo"><img id="pics" src="${item.img}" alt="img" /></div>
                 <div class="details">
-                  <h5>${item[0]}</h5>
-                  <h5>$ ${item[2]}</h5>
-                  <button>Remove</button>
+                  <h5>${item.title}</h5>
+                  <h5>$ ${item.price}</h5>
+                  <button class="dlted">Remove</button>
                 </div>
               </div></li>`
-    });
-    prodcont.innerHTML += `<div>${cartCost}</div>` 
+     });
+    
+     for (let i = 0; i < res.length; i++) {
+       document.querySelectorAll(".dlted")[i].addEventListener("click", () => {       
+         get(res[i]._id);
+         displayIt();
+       })
 
+     }
   }
 
 }
 displayIt();
 
-
-
+async function get(id) {
+  let data = await fetch(`http://localhost:5000/api/carts/${id}`, {
+    method: "DELETE",
+     headers: {
+  'Content-type': 'application/json; charset=UTF-8'
+    },
+  });
+  let res = await data.json();
+  console.log('res:', res)
+}

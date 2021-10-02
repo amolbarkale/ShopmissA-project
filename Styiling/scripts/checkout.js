@@ -1,5 +1,6 @@
-let total = localStorage.getItem("totalCost");
-let total1 = parseInt(total)
+let total = localStorage.getItem("bill");
+console.log('total:', total)
+let total1 = JSON.parse(total)
 
 
 let bill = document.getElementsByClassName("total")[0];

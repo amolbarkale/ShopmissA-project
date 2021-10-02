@@ -84,10 +84,12 @@
         padding-left: 25px;
         width: 75%;
       }
-      header > p {
+      header > div > p {
         text-align: start;
         margin-left: 20px;
+        margin-top: 20px;
       }
+
       .headers > li {
         font-weight: 700;
         font-size: 13px;
@@ -140,7 +142,7 @@
       .sidebar header {
         font-size: 22px;
         color: black;
-        line-height: 70px;
+        line-height: 25px;
         text-align: center;
         user-select: none;
       }
@@ -176,7 +178,9 @@
         left: 195px;
         display: block;
       }
-
+      .sidebar {
+        overflow: scroll;
+      }
       #itm {
         display: flex;
         flex-direction: row;
@@ -417,7 +421,7 @@
 
         <div class="sidebar">
           <header>
-            <p>Cart :</p>
+            <div id="totals"></div>
             <button id="done" onclick="shift()">Checkout</button>
 
             <label for="check"> <i class="fas fa-times" id="cancel"></i></label>

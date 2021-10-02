@@ -13,6 +13,7 @@ const router = require("express").Router();
         const savedProduct = await newProduct.save();
         res.status(200).json(savedProduct)
     } catch (err) {
+        console.log('err:', err)
         
         res.status(500).json(err);
     }
