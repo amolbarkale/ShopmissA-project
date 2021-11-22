@@ -13,7 +13,6 @@
       password: pass,
     };
     data = JSON.stringify(data);
-    console.log("data:", data);
 
     fetch("http://localhost:5000/api/auth/register", {
       method: "POST",

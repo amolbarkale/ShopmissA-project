@@ -1,3 +1,7 @@
+let toIndex = document.getElementById("redirect").addEventListener("click", () => {
+  window.location.href="./index.html"
+})
+
 
 async function getAPI() {
     let data = await fetch("http://localhost:5000/api/products");
@@ -11,7 +15,6 @@ async function getAPI() {
     let div = document.createElement("div");
     div.addEventListener("click", function () {
       postIt( title, price, img)
-      //addIt(title, img,price)
     })
     
         let imge = document.createElement("img");
